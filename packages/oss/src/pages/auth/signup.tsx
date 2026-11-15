@@ -48,9 +48,6 @@ export async function SignupPage(props: SignupPageProps) {
 					}}
 					dict={dict}
 				/>
-				<p className="text-center text-xs text-muted-foreground">
-					<a href="https://github.com/aminecodes/Essal-Mail" className="underline underline-offset-4">Essal Mail source code</a>
-				</p>
 			</div>
 		</div>
 	);
