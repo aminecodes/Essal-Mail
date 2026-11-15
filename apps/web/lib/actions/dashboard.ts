@@ -944,8 +944,8 @@ export const testSendingEmail = async (
 			const mailer = createMailer("smtp", decryptedSecrets);
 
 			const ok = await mailer.sendTestEmail(userIdentity.identities.value, {
-				subject: "Test email from Kurrier",
-				body: "This is a test email from your configured SMTP account in Kurrier.",
+				subject: "Test email from Essal Mail",
+				body: "This is a test email from your configured SMTP account in Essal Mail.",
 			});
 
 			return ok
@@ -960,9 +960,9 @@ export const testSendingEmail = async (
 			);
 
 			const ok = await mailer.sendTestEmail(userIdentity.identities.value, {
-				subject: "Test email from Kurrier",
+				subject: "Test email from Essal Mail",
 				from: userIdentity.identities.value,
-				body: "This is a test email from your configured account in Kurrier.",
+				body: "This is a test email from your configured account in Essal Mail.",
 			});
 
 			return ok
@@ -976,9 +976,9 @@ export const testSendingEmail = async (
 			});
 
 			const ok = await mailer.sendTestEmail(userIdentity.identities.value, {
-				subject: "Test email from Kurrier",
+				subject: "Test email from Essal Mail",
 				from: userIdentity.identities.value,
-				body: "This is a test email from your connected Gmail account in Kurrier.",
+				body: "This is a test email from your connected Gmail account in Essal Mail.",
 			});
 
 			return ok

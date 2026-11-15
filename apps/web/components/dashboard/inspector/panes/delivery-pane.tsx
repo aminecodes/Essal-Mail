@@ -185,10 +185,10 @@ function createDeliveryEvents(
 		events.push({
 			id: "stored",
 			title:
-				dict?.mailbox?.messageIndexedByKurrier ?? "Message indexed by Kurrier",
+				dict?.mailbox?.messageIndexedByKurrier ?? "Message indexed by Essal Mail",
 			description:
 				dict?.mailbox?.messageIndexedDescription ??
-				"Kurrier synchronized, parsed and stored the message.",
+				"Essal Mail synchronized, parsed and stored the message.",
 			date: new Date(message.createdAt),
 			status: "success",
 			icon: Database,
@@ -313,7 +313,7 @@ export default function DeliveryPane({ message }: DeliveryPaneProps) {
 			title={dict?.mailbox?.tabDelivery ?? "Delivery"}
 			description={
 				dict?.mailbox?.deliveryTimelineDescription ??
-				"The message delivery timeline from sender to Kurrier."
+				"The message delivery timeline from sender to Essal Mail."
 			}
 		>
 			<div className="h-full min-h-0 w-full overflow-auto p-4">

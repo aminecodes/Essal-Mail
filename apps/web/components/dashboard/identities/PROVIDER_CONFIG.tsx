@@ -60,7 +60,7 @@ export const PROVIDER_CONFIG: Record<
 		textDark: "dark:text-gray-300",
 	},
 	inbound: {
-		name: "Kurrier Inbound",
+		name: "Essal Mail Inbound",
 		dot: "bg-cyan-500",
 		chip: "bg-cyan-50 border-cyan-200 text-cyan-700",
 		chipDark: "dark:bg-cyan-500/10 dark:border-cyan-900/40",

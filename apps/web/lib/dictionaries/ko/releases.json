@@ -2,12 +2,12 @@
 	"common": {
 		"whatsNew": "새로운 기능",
 		"release": "릴리스",
-		"seeWhatsNew": "최신 Kurrier 릴리스의 새로운 기능을 확인하세요.",
+		"seeWhatsNew": "최신 Essal Mail 릴리스의 새로운 기능을 확인하세요.",
 		"dismiss": "새로운 기능 닫기"
 	},
 	"releases": {
 		"v4_4_0": {
-			"title": "더욱 연결되고 안정적인 Kurrier",
+			"title": "더욱 연결되고 안정적인 Essal Mail",
 			"description": "Microsoft 365 계정을 연결하고, 더욱 안정적인 이메일 동기화와 개선된 Drive 기능을 경험해 보세요.",
 			"features": {
 				"microsoft365": {
@@ -26,7 +26,7 @@
 		},
 		"v4_2_0": {
 			"title": "이메일 서명",
-			"description": "각 이메일 계정의 서명을 만들고 Kurrier 작성기에서 바로 사용하세요.",
+			"description": "각 이메일 계정의 서명을 만들고 Essal Mail 작성기에서 바로 사용하세요.",
 			"features": {
 				"emailSignatures": {
 					"title": "계정별 이메일 서명",
@@ -43,7 +43,7 @@
 			}
 		},
 		"v4_1_0": {
-			"title": "더 나아진 Kurrier",
+			"title": "더 나아진 Essal Mail",
 			"description": "메일 안정성, 작성기, 반응형 레이아웃 및 워크스페이스 관리 전반이 개선되었습니다.",
 			"features": {
 				"mailReliability": {

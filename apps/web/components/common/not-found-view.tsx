@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import { hasLocale, type Locale } from "@/lib/locale";
 
 // This view is also reachable from the root app/not-found.tsx boundary,
@@ -13,27 +13,27 @@ const COPY: Record<Locale, { title: string; body: string; back: string }> = {
 	en: {
 		title: "Page not found",
 		body: "The page you're looking for doesn't exist or may have been moved.",
-		back: "Back to Kurrier",
+		back: "Back to Essal Mail",
 	},
 	"pt-BR": {
 		title: "Página não encontrada",
 		body: "A página que você está procurando não existe ou pode ter sido movida.",
-		back: "Voltar ao Kurrier",
+		back: "Voltar ao Essal Mail",
 	},
 	ko: {
 		title: "Page not found",
 		body: "The page you're looking for doesn't exist or may have been moved.",
-		back: "Back to Kurrier",
+		back: "Back to Essal Mail",
 	},
 	pl: {
 		title: "Nie znaleziono strony",
 		body: "Strona, której szukasz, nie istnieje lub została przeniesiona.",
-		back: "Wróć do Kurrier",
+		back: "Wróć do Essal Mail",
 	},
 	ru: {
 		title: "Страница не найдена",
 		body: "Страница, которую вы ищете, не существует или была перемещена.",
-		back: "Вернуться в Kurrier",
+		back: "Вернуться в Essal Mail",
 	},
 };
 
@@ -46,8 +46,8 @@ export default function NotFoundView() {
 	return (
 		<div className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 text-center">
 			<Link href={`/${locale}`} className="flex items-center gap-2 font-medium">
-				<KurrierLogo size={40} />
-				<span className="text-2xl font-medium">Kurrier</span>
+				<EssalMailLogo size={40} />
+				<span className="text-2xl font-medium">Essal Mail</span>
 			</Link>
 
 			<div className="space-y-2">

@@ -1,4 +1,4 @@
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import { fetchWorkspace } from "@/lib/actions/workspace";
 
 export default async function WorkspaceLogo() {
@@ -13,7 +13,7 @@ export default async function WorkspaceLogo() {
 					className="size-9 shrink-0 rounded-lg object-contain"
 				/>
 			) : (
-				<KurrierLogo size={36} />
+				<EssalMailLogo size={36} />
 			)}
 			<span className="truncate text-lg font-semibold">{workspace.name}</span>
 		</div>

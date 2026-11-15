@@ -8,7 +8,7 @@
 	"secretSingular": "segredo",
 	"secretPlural": "segredos",
 	"emptyTitle": "Seu Vault está vazio",
-	"emptyDescription": "Armazene tokens de API, segredos de assinatura e credenciais que as integrações do Kurrier podem usar com segurança.",
+	"emptyDescription": "Armazene tokens de API, segredos de assinatura e credenciais que as integrações do Essal Mail podem usar com segurança.",
 	"columnSecret": "Segredo",
 	"columnValue": "Valor",
 	"columnEncryption": "Criptografia",

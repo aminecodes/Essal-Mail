@@ -109,8 +109,8 @@ export async function GET(request: NextRequest) {
 		 *
 		 * Email is only used at this point to either:
 		 *
-		 * 1. link the Google identity to an existing Kurrier user, or
-		 * 2. provision a new Kurrier user.
+		 * 1. link the Google identity to an existing Essal Mail user, or
+		 * 2. provision a new Essal Mail user.
 		 *
 		 * Don't automatically link/create from an unverified email.
 		 */
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
 	/*
 	 * On first login this creates the permanent mapping:
 	 *
-	 *     Google issuer + sub -> authAccount -> Kurrier user
+	 *     Google issuer + sub -> authAccount -> Essal Mail user
 	 *
 	 * On later logins the row already exists and this is a no-op.
 	 */

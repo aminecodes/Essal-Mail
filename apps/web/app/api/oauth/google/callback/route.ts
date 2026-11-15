@@ -133,7 +133,7 @@ export async function GET(request: NextRequest) {
 	if (!effectiveRefreshToken) {
 		return redirectWithError(
 			workspacePublicId,
-			"Google did not return a refresh token. Remove Kurrier access from your Google Account and reconnect.",
+			"Google did not return a refresh token. Remove Essal Mail access from your Google Account and reconnect.",
 		);
 	}
 

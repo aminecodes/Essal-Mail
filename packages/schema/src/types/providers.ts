@@ -23,7 +23,7 @@ export const ProviderLabels: Record<Providers, string> = {
 	postmark: "Postmark",
 	sendgrid: "SendGrid",
 	google: "Google",
-	inbound: "Kurrier Inbound",
+	inbound: "Essal Mail Inbound",
 	jmap: "JMAP",
 	mailtrap: "Mailtrap Inbound",
 
@@ -111,7 +111,7 @@ export const STORAGE_PROVIDERS: ProviderSpec[] = [
 export const INBOUND_SPEC = {
 	key: "inbound" as const,
 	name: ProviderLabels.inbound,
-	help: "Receive email directly through Kurrier’s API without configuring an external mail provider.",
+	help: "Receive email directly through Essal Mail’s API without configuring an external mail provider.",
 };
 
 export type JmapPreset = {
@@ -150,5 +150,5 @@ export const MAILTRAP_SPEC = {
 	name: ProviderLabels.mailtrap,
 	help:
 		// "Receive email through Mailtrap's inbound inboxes. Add your Mailtrap API token below, then paste the generated webhook URL into your Mailtrap inbox settings.",
-		"Receive email directly from Mailtrap's Inbound Email API. We'll fetch and process the raw message and deliver it into Kurrier.",
+		"Receive email directly from Mailtrap's Inbound Email API. We'll fetch and process the raw message and deliver it into Essal Mail.",
 };

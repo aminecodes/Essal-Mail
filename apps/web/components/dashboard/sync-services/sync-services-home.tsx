@@ -92,7 +92,7 @@ export default function SyncServicesHome({
 								{dict?.platform?.separateWord ?? "separate"}
 							</span>
 							{dict?.platform?.davCredentialsHelpSuffix ??
-								" from your Kurrier login."}
+								" from your Essal Mail login."}
 						</p>
 					</div>
 

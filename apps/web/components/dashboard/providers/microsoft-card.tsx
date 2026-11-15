@@ -193,7 +193,7 @@ export default function MicrosoftCard({
 					</div>
 
 					<div className="my-2">
-						Kurrier will lose access to this Microsoft account. Your emails and
+						Essal Mail will lose access to this Microsoft account. Your emails and
 						mailbox in Microsoft will not be deleted.
 					</div>
 

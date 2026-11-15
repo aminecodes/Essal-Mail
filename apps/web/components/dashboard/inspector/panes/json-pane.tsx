@@ -90,7 +90,7 @@ export default function JsonPane({ message }: JsonPaneProps) {
 				title={dict?.mailbox?.tabJson ?? "JSON"}
 				description={
 					dict?.mailbox?.jsonPlaceholder ??
-					"The normalized Kurrier message object will be shown here."
+					"The normalized Essal Mail message object will be shown here."
 				}
 			>
 				<div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -105,7 +105,7 @@ export default function JsonPane({ message }: JsonPaneProps) {
 			title={dict?.mailbox?.tabJson ?? "JSON"}
 			description={
 				dict?.mailbox?.jsonDescription ??
-				"The normalized Kurrier message object."
+				"The normalized Essal Mail message object."
 			}
 		>
 			<div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden p-4">

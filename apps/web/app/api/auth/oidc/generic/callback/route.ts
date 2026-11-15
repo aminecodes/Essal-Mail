@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
 		 *
 		 * The auth account is authoritative. We deliberately don't look the
 		 * user up by email here — a change to the email returned by the IdP
-		 * must not change which Kurrier user is authenticated.
+		 * must not change which Essal Mail user is authenticated.
 		 */
 		const [existingUser] = await db
 			.select()
@@ -146,8 +146,8 @@ export async function GET(request: NextRequest) {
 		 *
 		 * Email is only used at this point to either:
 		 *
-		 * 1. link the external identity to an existing Kurrier user, or
-		 * 2. provision a new Kurrier user.
+		 * 1. link the external identity to an existing Essal Mail user, or
+		 * 2. provision a new Essal Mail user.
 		 *
 		 * Don't automatically link/create from an unverified email, unless
 		 * the operator has explicitly opted out via OIDC_REQUIRE_VERIFIED_EMAIL.
@@ -231,7 +231,7 @@ export async function GET(request: NextRequest) {
 	/*
 	 * On first login this creates the permanent mapping:
 	 *
-	 *     issuer + sub -> authAccount -> Kurrier user
+	 *     issuer + sub -> authAccount -> Essal Mail user
 	 *
 	 * On later logins the row already exists and this is a no-op.
 	 */

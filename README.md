@@ -1,4 +1,13 @@
-# Kurrier
+# Essal Mail
+
+Essal Mail is Essal's email, calendar, contacts and file workspace, based on
+[Kurrier](https://github.com/kurrier-org/kurrier). It uses the Essal product
+identity: a blue outline envelope mark with matching favicons and app icons.
+
+Source: [aminecodes/Essal-Mail](https://github.com/aminecodes/Essal-Mail).
+The original license and notices are preserved in `LICENSE` and `NOTICE`.
+
+The upstream project documentation follows below.
 
 ``` text
  _  __               _

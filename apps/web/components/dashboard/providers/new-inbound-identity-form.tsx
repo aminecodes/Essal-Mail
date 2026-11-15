@@ -52,7 +52,7 @@ function NewInboundIdentityForm({ onCompleted }: { onCompleted?: () => void }) {
 
 					<p className="mt-2 text-xs text-muted-foreground">
 						{dict?.platform?.inboundApiHelp ??
-							"Send raw RFC822/EML messages to this identity using the Kurrier API."}
+							"Send raw RFC822/EML messages to this identity using the Essal Mail API."}
 					</p>
 				</div>
 			),

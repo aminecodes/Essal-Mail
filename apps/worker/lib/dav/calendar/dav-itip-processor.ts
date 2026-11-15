@@ -108,7 +108,7 @@ export function normaliseItipRequestToVevent(itip: string): string {
 		| undefined;
 	cleanVcal.addPropertyWithValue(
 		"prodid",
-		incomingProdid || "-//Kurrier//Calendar//EN",
+		incomingProdid || "-//Essal Mail//Calendar//EN",
 	);
 	cleanVcal.addPropertyWithValue("version", "2.0");
 	cleanVcal.addSubcomponent(vevent);

@@ -2,7 +2,7 @@
 	"common": {
 		"whatsNew": "Co nowego",
 		"release": "Wydanie",
-		"seeWhatsNew": "Zobacz, co nowego w najnowszym wydaniu Kurrier.",
+		"seeWhatsNew": "Zobacz, co nowego w najnowszym wydaniu Essal Mail.",
 		"dismiss": "Zamknij informacje o nowościach"
 	},
 	"releases": {
@@ -26,7 +26,7 @@
 		},
 		"v4_2_0": {
 			"title": "Podpisy e-mail",
-			"description": "Twórz profesjonalne podpisy dla każdej tożsamości i używaj ich bezpośrednio w edytorze wiadomości Kurrier.",
+			"description": "Twórz profesjonalne podpisy dla każdej tożsamości i używaj ich bezpośrednio w edytorze wiadomości Essal Mail.",
 			"features": {
 				"emailSignatures": {
 					"title": "Podpisy dla każdej tożsamości",
@@ -43,7 +43,7 @@
 			}
 		},
 		"v4_1_0": {
-			"title": "Lepszy Kurrier",
+			"title": "Lepszy Essal Mail",
 			"description": "To wydanie wprowadza ulepszenia niezawodności poczty, edytora wiadomości, responsywnych układów i zarządzania obszarem roboczym.",
 			"features": {
 				"mailReliability": {

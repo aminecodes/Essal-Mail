@@ -106,7 +106,7 @@ async function createDavWorkspaceUser(
 		await davDb.insert(davPrincipals).values({
 			uri: principalUri,
 			email,
-			displayname: "Kurrier Workspace",
+			displayname: "Essal Mail Workspace",
 		});
 	}
 
@@ -177,7 +177,7 @@ async function createDavUser(
 		await davDb.insert(davPrincipals).values({
 			uri: principalUri,
 			email,
-			displayname: "Kurrier",
+			displayname: "Essal Mail",
 		});
 	}
 

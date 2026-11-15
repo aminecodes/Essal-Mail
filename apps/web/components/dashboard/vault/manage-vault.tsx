@@ -256,7 +256,7 @@ export default function ManageVault({
 
 						<p className="mt-1 max-w-md text-sm leading-6 text-muted-foreground">
 							{dict?.vault?.emptyDescription ??
-								"Store API tokens, signing secrets and credentials that Kurrier integrations can use securely."}
+								"Store API tokens, signing secrets and credentials that Essal Mail integrations can use securely."}
 						</p>
 
 						<div className="mt-5 w-full sm:w-fit">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import { DISTRIBUTION_CONFIG } from "@distribution/config";
 
 export async function RootPage() {
@@ -12,14 +12,14 @@ export async function RootPage() {
 			<div className="w-full max-w-sm">
 				<div className="flex flex-col items-center rounded-xl border bg-background p-8 shadow-sm">
 					<div className="mb-6 flex items-center gap-3">
-						<KurrierLogo size={52} />
+						<EssalMailLogo size={52} />
 						<span className="text-3xl font-semibold tracking-tight">
-							Kurrier
+							Essal Mail
 						</span>
 					</div>
 
 					<div className="mb-8 text-center">
-						<h1 className="text-xl font-semibold">Welcome to Kurrier</h1>
+						<h1 className="text-xl font-semibold">Welcome to Essal Mail</h1>
 
 						<p className="text-muted-foreground mt-2 text-sm">
 							Your open source email workspace.

@@ -424,7 +424,7 @@ export default defineNitroPlugin(async (nitroApp) => {
 				hookResult === undefined
 			) {
 				throw new Error(
-					"Kurrier Mail sending is unavailable for this identity",
+					"Essal Mail sending is unavailable for this identity",
 				);
 			}
 

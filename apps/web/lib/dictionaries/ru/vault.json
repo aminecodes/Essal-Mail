@@ -8,7 +8,7 @@
 	"secretSingular": "секрет",
 	"secretPlural": "секретов",
 	"emptyTitle": "Vault пуст",
-	"emptyDescription": "Храните токены API, секреты подписей и учётные данные, которые интеграции Kurrier смогут безопасно использовать.",
+	"emptyDescription": "Храните токены API, секреты подписей и учётные данные, которые интеграции Essal Mail смогут безопасно использовать.",
 	"columnSecret": "Секрет",
 	"columnValue": "Значение",
 	"columnEncryption": "Шифрование",

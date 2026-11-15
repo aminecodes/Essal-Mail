@@ -46,7 +46,7 @@ const emailVariables: EmailEditorVariable[] = [
 	{
 		key: "company_name",
 		label: "Company name",
-		example: "Kurrier",
+		example: "Essal Mail",
 	},
 ];
 

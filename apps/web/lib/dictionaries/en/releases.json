@@ -2,7 +2,7 @@
 	"common": {
 		"whatsNew": "What's new",
 		"release": "Release",
-		"seeWhatsNew": "See what's new in the latest Kurrier release.",
+		"seeWhatsNew": "See what's new in the latest Essal Mail release.",
 		"dismiss": "Dismiss what's new"
 	},
 	"releases": {
@@ -26,7 +26,7 @@
 		},
 		"v4_2_0": {
 			"title": "Email signatures",
-			"description": "Create polished signatures for each identity and use them directly from the Kurrier composer.",
+			"description": "Create polished signatures for each identity and use them directly from the Essal Mail composer.",
 			"features": {
 				"emailSignatures": {
 					"title": "Signatures for every identity",
@@ -43,7 +43,7 @@
 			}
 		},
 		"v4_1_0": {
-			"title": "A better Kurrier",
+			"title": "A better Essal Mail",
 			"description": "This release brings improvements across mail reliability, the composer, responsive layouts and workspace management.",
 			"features": {
 				"mailReliability": {

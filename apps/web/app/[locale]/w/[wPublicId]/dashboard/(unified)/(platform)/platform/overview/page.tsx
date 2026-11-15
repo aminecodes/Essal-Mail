@@ -235,7 +235,7 @@ export default async function Page({
 									<h1 className="text-2xl font-semibold tracking-tight text-foreground">
 										{p.welcomeTo}{" "}
 										<span className="capitalize">
-											{workspace?.name || "Kurrier"}
+											{workspace?.name || "Essal Mail"}
 										</span>
 									</h1>
 

@@ -2,7 +2,7 @@
 	"common": {
 		"whatsNew": "Novidades",
 		"release": "Versão",
-		"seeWhatsNew": "Veja as novidades da versão mais recente do Kurrier.",
+		"seeWhatsNew": "Veja as novidades da versão mais recente do Essal Mail.",
 		"dismiss": "Fechar novidades"
 	},
 	"releases": {
@@ -26,7 +26,7 @@
 		},
 		"v4_2_0": {
 			"title": "Assinaturas de e-mail",
-			"description": "Crie assinaturas profissionais para cada identidade e use-as diretamente no editor de mensagens do Kurrier.",
+			"description": "Crie assinaturas profissionais para cada identidade e use-as diretamente no editor de mensagens do Essal Mail.",
 			"features": {
 				"emailSignatures": {
 					"title": "Assinaturas para cada identidade",
@@ -43,7 +43,7 @@
 			}
 		},
 		"v4_1_0": {
-			"title": "Um Kurrier ainda melhor",
+			"title": "Um Essal Mail ainda melhor",
 			"description": "Esta versão traz melhorias na confiabilidade do e-mail, no editor de mensagens, nos layouts responsivos e no gerenciamento do espaço de trabalho.",
 			"features": {
 				"mailReliability": {

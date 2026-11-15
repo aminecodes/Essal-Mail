@@ -8,7 +8,7 @@
 	"secretSingular": "sekret",
 	"secretPlural": "sekrety",
 	"emptyTitle": "Twój sejf jest pusty",
-	"emptyDescription": "Przechowuj tokeny API, sekrety podpisywania i poświadczenia, z których integracje Kurrier mogą bezpiecznie korzystać.",
+	"emptyDescription": "Przechowuj tokeny API, sekrety podpisywania i poświadczenia, z których integracje Essal Mail mogą bezpiecznie korzystać.",
 	"columnSecret": "Sekret",
 	"columnValue": "Wartość",
 	"columnEncryption": "Szyfrowanie",

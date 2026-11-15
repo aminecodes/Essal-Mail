@@ -1,5 +1,7 @@
 "use client";
 
+import EssalMailLogo from "@/components/common/essal-mail-logo";
+
 import { IconFrame } from "@tabler/icons-react";
 import {
 	Calendar,
@@ -137,11 +139,11 @@ export function AppSidebar({ ...props }: UnifiedSidebarProps) {
 								<Link
 									href={`/w/${workspacePublicId}/dashboard/platform/overview`}
 								>
-									<div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-										<Mail className="size-4" />
+									<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-[#155DFC] text-white">
+										<EssalMailLogo size={20} color="currentColor" />
 									</div>
 									<div className="grid flex-1 text-left text-sm leading-tight">
-										<span className="truncate font-medium">Kurrier</span>
+										<span className="truncate font-medium">Essal Mail</span>
 									</div>
 								</Link>
 							</SidebarMenuButton>
@@ -219,7 +221,7 @@ export function AppSidebar({ ...props }: UnifiedSidebarProps) {
 			<Sidebar collapsible="none" className="hidden min-w-0 flex-1 md:flex">
 				<SidebarHeader className="gap-3.5 border-b p-4">
 					{/*<div className="text-left font-sans flex items-center gap-1">*/}
-					{/*	<KurrierLogo size={36} />*/}
+					{/*	<EssalMailLogo size={36} />*/}
 					{/*	<span className="text-lg font-semibold">kurrier</span>*/}
 					{/*</div>*/}
 					{sidebarTopContent}

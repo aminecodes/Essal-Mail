@@ -7,6 +7,6 @@ export const enforceSingleWorkspace = async () => {
 		.limit(1);
 
 	if (existingWorkspace.length > 0) {
-		throw new Error("This Kurrier instance already has a workspace.");
+		throw new Error("This Essal Mail instance already has a workspace.");
 	}
 };

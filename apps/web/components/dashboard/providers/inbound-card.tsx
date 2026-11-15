@@ -54,7 +54,7 @@ export default function InboundCard({
 
 							<p className="mt-1 text-sm leading-5 text-muted-foreground">
 								{dict?.platform?.receiveRawEmailDescription ??
-									"Receive raw email directly into Kurrier."}
+									"Receive raw email directly into Essal Mail."}
 							</p>
 
 							<p className="mt-1 text-xs leading-5 text-muted-foreground/80">
@@ -87,7 +87,7 @@ export default function InboundCard({
 
 								<div className="mt-1 text-xs leading-5 text-muted-foreground">
 									{dict?.platform?.createIdentityToReceiveHelp ??
-										"Create an identity to receive RFC822/EML messages through the Kurrier API."}
+										"Create an identity to receive RFC822/EML messages through the Essal Mail API."}
 								</div>
 							</div>
 

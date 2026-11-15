@@ -143,7 +143,7 @@ export default function NewCustomEmailProviderAccountForm({
 						</p>
 						<p className="mt-1 text-xs text-muted-foreground">
 							{dict?.platform?.customProviderMailboxIdentityHelp ??
-								"Kurrier will create the email identity and start syncing its mailboxes automatically."}
+								"Essal Mail will create the email identity and start syncing its mailboxes automatically."}
 						</p>
 					</div>
 				),

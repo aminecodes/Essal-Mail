@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import { hasLocale, type Locale } from "@/lib/locale";
 
 // Root error boundary — sits outside app/[locale]/layout.tsx, so there is no
@@ -16,31 +16,31 @@ const COPY: Record<
 		title: "Something went wrong",
 		body: "An unexpected error occurred. You can try again, or head back home.",
 		retry: "Try again",
-		back: "Back to Kurrier",
+		back: "Back to Essal Mail",
 	},
 	"pt-BR": {
 		title: "Algo deu errado",
 		body: "Ocorreu um erro inesperado. Você pode tentar novamente ou voltar para o início.",
 		retry: "Tentar novamente",
-		back: "Voltar ao Kurrier",
+		back: "Voltar ao Essal Mail",
 	},
 	ko: {
 		title: "Something went wrong",
 		body: "An unexpected error occurred. You can try again, or head back home.",
 		retry: "Try again",
-		back: "Back to Kurrier",
+		back: "Back to Essal Mail",
 	},
 	pl: {
 		title: "Coś poszło nie tak",
 		body: "Wystąpił nieoczekiwany błąd. Spróbuj ponownie albo wróć na stronę główną.",
 		retry: "Spróbuj ponownie",
-		back: "Wróć do Kurrier",
+		back: "Wróć do Essal Mail",
 	},
 	ru: {
 		title: "Что-то пошло не так",
 		body: "Произошла непредвиденная ошибка. Попробуйте ещё раз или вернитесь на главную страницу.",
 		retry: "Попробовать снова",
-		back: "Вернуться в Kurrier",
+		back: "Вернуться в Essal Mail",
 	},
 };
 
@@ -63,8 +63,8 @@ export default function GlobalError({
 	return (
 		<div className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 text-center">
 			<Link href={`/${locale}`} className="flex items-center gap-2 font-medium">
-				<KurrierLogo size={40} />
-				<span className="text-2xl font-medium">Kurrier</span>
+				<EssalMailLogo size={40} />
+				<span className="text-2xl font-medium">Essal Mail</span>
 			</Link>
 			<div className="space-y-2">
 				<h1 className="text-2xl font-semibold">{copy.title}</h1>

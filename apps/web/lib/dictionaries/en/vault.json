@@ -8,7 +8,7 @@
 	"secretSingular": "secret",
 	"secretPlural": "secrets",
 	"emptyTitle": "Your Vault is empty",
-	"emptyDescription": "Store API tokens, signing secrets and credentials that Kurrier integrations can use securely.",
+	"emptyDescription": "Store API tokens, signing secrets and credentials that Essal Mail integrations can use securely.",
 	"columnSecret": "Secret",
 	"columnValue": "Value",
 	"columnEncryption": "Encryption",

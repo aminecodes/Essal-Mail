@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { SignupForm } from "@/components/auth/signup-form";
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import { LanguageSwitcher } from "@/components/common/language-switcher";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getGenericOidcSettings } from "@/lib/generic-oidc";
@@ -32,9 +32,9 @@ export async function SignupPage(props: SignupPageProps) {
 		<div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
 			<div className="flex w-full max-w-sm flex-col gap-6">
 				<div className="flex items-center justify-between">
-					<Link href="/" className="flex items-center gap-2 font-medium">
-						<KurrierLogo size={56} />
-						<span className="truncate font-medium text-4xl">Kurrier</span>
+					<Link href="/" className="flex min-w-0 items-center gap-2 font-medium">
+						<EssalMailLogo size={48} className="shrink-0" />
+						<span className="truncate text-3xl font-semibold tracking-tight">Essal Mail</span>
 					</Link>
 
 					<LanguageSwitcher />
@@ -48,6 +48,9 @@ export async function SignupPage(props: SignupPageProps) {
 					}}
 					dict={dict}
 				/>
+				<p className="text-center text-xs text-muted-foreground">
+					<a href="https://github.com/aminecodes/Essal-Mail" className="underline underline-offset-4">Essal Mail source code</a>
+				</p>
 			</div>
 		</div>
 	);

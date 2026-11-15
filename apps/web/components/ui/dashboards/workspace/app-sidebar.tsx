@@ -13,7 +13,7 @@ import {
 	SidebarMenu,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import KurrierLogo from "@/components/common/kurrier-logo";
+import EssalMailLogo from "@/components/common/essal-mail-logo";
 import Link from "next/link";
 import { PublicConfig } from "@schema";
 import { NavUser } from "@/components/ui/dashboards/workspace/nav-user";
@@ -84,8 +84,8 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
 							href="/dashboard/platform/overview"
 							className={"flex justify-start mx-1 items-center gap-1"}
 						>
-							<KurrierLogo size={30} />
-							<span className="truncate font-medium text-xl">Kurrier</span>
+							<EssalMailLogo size={30} />
+							<span className="truncate font-medium text-xl">Essal Mail</span>
 						</Link>
 					</SidebarMenuItem>
 				</SidebarMenu>

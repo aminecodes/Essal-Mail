@@ -24,7 +24,7 @@ export default function ManagedProviderCard({ spec }: { spec: ProviderSpec }) {
 
 						<p className="text-sm text-muted-foreground my-2">
 							{dict?.platform?.managedSecurelyBackedByOwnAccount ??
-								"Storage is managed by Kurrier and backed by your configured storage infrastructure."}
+								"Storage is managed by Essal Mail and backed by your configured storage infrastructure."}
 						</p>
 					</div>
 				</div>
