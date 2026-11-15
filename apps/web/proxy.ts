@@ -42,6 +42,10 @@ function getRedirectLocale(request: NextRequest) {
 export async function proxy(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
 
+	if (pathname === "/site.webmanifest") {
+		return NextResponse.next();
+	}
+
 	if (
 		(request.method === "GET" || request.method === "HEAD") &&
 		/^\/api\/drive\/share\/[A-Za-z0-9_-]{43}\/?$/.test(pathname)
