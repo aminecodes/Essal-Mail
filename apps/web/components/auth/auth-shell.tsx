@@ -1,8 +1,12 @@
 import type { ReactNode } from "react";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { ArrowLeft } from "lucide-react";
 import { LanguageSwitcher } from "@/components/common/language-switcher";
 import type { Dictionary } from "@/lib/dictionaries";
 import styles from "./auth.module.css";
+
+const bodyFont = Inter({ subsets: ["latin"], variable: "--auth-font-body" });
+const headingFont = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--auth-font-heading" });
 
 export function AuthShell({ children, dict, signup = false }: {
 	children: ReactNode;
@@ -10,7 +14,7 @@ export function AuthShell({ children, dict, signup = false }: {
 	signup?: boolean;
 }) {
 	return (
-		<main className={styles.page}>
+		<main className={`${styles.page} ${bodyFont.variable} ${headingFont.variable}`}>
 			<aside className={styles.brandPanel} aria-label="Essal Mail">
 				<header className={styles.brandHeader}>
 					<a href="https://essal.cloud" className={styles.brand} aria-label="Essal Mail — Essal Cloud">
@@ -35,7 +39,7 @@ export function AuthShell({ children, dict, signup = false }: {
 					</header>
 					{children}
 					<footer className={styles.footer}>
-						<p>© Essal Mail.</p>
+						<p>© Essal Mail. All rights reserved.</p>
 						<div className={styles.language}><LanguageSwitcher showLabel /></div>
 					</footer>
 				</div>

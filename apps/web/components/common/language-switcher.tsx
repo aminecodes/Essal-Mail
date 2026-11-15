@@ -1,6 +1,6 @@
 "use client";
 
-import { Languages } from "lucide-react";
+import { ChevronDown, Globe, Languages } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { useOptionalDictionary } from "@/components/providers/dictionary-provider";
@@ -66,6 +66,18 @@ function useLocaleSwitch() {
  */
 export function LanguageSwitcher({ showLabel = false }: { showLabel?: boolean }) {
 	const { currentLocale, pending, onSelect } = useLocaleSwitch();
+
+	if (showLabel) {
+		return (
+			<div>
+				<Globe size={14} data-language-icon="globe" aria-hidden="true" />
+				<select aria-label="Language" value={currentLocale} disabled={pending} onChange={(event) => onSelect(event.target.value)}>
+					{locales.map((locale) => <option key={locale} value={locale}>{LOCALE_LABELS[locale]}</option>)}
+				</select>
+				<ChevronDown size={14} data-language-icon="chevron" aria-hidden="true" />
+			</div>
+		);
+	}
 
 	return (
 		<DropdownMenu>

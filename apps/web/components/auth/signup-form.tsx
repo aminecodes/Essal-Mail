@@ -32,10 +32,9 @@ export function SignupForm({ oidc, dict }: { oidc?: AuthProviders; dict: Diction
 				if (!validatePasswords()) { event.preventDefault(); retypeRef.current?.reportValidity(); retypeRef.current?.focus(); }
 			}}>
 				<input type="hidden" name="locale" value={dict.locale} />
-				<p className={styles.hint}>{dict.auth.allFieldsRequired}</p>
 				<div className={styles.field}>
-					<label htmlFor="email">{dict.auth.email} <span aria-hidden="true">*</span></label>
-					<input className={styles.input} id="email" name="email" type="email" placeholder="name@company.com" required autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
+					<label htmlFor="email">{dict.auth.email}</label>
+					<input className={styles.input} id="email" name="email" type="email" placeholder={dict.auth.emailPlaceholder} required autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
 				</div>
 				<div className={styles.field}>
 					<AuthPasswordField id="password" name="password" label={dict.auth.password} dict={dict} required minLength={8} autoComplete="new-password" inputRef={passwordRef} aria-describedby="password-hint" onBlur={validatePasswords} onInput={clearMismatch} />
@@ -46,7 +45,7 @@ export function SignupForm({ oidc, dict }: { oidc?: AuthProviders; dict: Diction
 					{mismatch && <p id="password-mismatch" className={styles.error} role="alert">{dict.auth.passwordsDoNotMatch}</p>}
 				</div>
 				<div className={styles.field}>
-					<label htmlFor="workspaceName">{dict.auth.workspaceName} <span aria-hidden="true">*</span></label>
+					<label htmlFor="workspaceName">{dict.auth.workspaceName}</label>
 					<input className={styles.input} id="workspaceName" name="workspaceName" type="text" required autoComplete="organization" />
 				</div>
 				{formState.error && <p role="alert" className={styles.error}>{resolveDictMessage(dict.actions, formState.error)}</p>}

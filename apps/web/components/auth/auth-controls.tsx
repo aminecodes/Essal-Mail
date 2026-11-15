@@ -42,7 +42,7 @@ export function AuthPasswordField({ label, dict, inputRef, ...props }: InputHTML
 	const [visible, setVisible] = useState(false);
 	return (
 		<div className={styles.field}>
-			<label htmlFor={props.id}>{label} <span aria-hidden="true">*</span></label>
+			<label htmlFor={props.id}>{label}</label>
 			<div className={styles.passwordWrapper}>
 				<input {...props} ref={inputRef} type={visible ? "text" : "password"} className={styles.input} />
 				<button type="button" className={styles.passwordToggle} aria-label={visible ? dict.auth.hidePassword : dict.auth.showPassword} aria-pressed={visible} aria-controls={props.id} onClick={() => setVisible(!visible)}>
