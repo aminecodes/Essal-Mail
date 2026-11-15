@@ -1,10 +1,8 @@
 import { getPublicEnv } from "@schema";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { SignupForm } from "@/components/auth/signup-form";
-import EssalMailLogo from "@/components/common/essal-mail-logo";
-import { LanguageSwitcher } from "@/components/common/language-switcher";
+import { AuthShell } from "@/components/auth/auth-shell";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getGenericOidcSettings } from "@/lib/generic-oidc";
 import { withLocale } from "@/lib/utils";
@@ -29,26 +27,15 @@ export async function SignupPage(props: SignupPageProps) {
 	const dict = await getDictionary(nParams.locale);
 
 	return (
-		<div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-			<div className="flex w-full max-w-sm flex-col gap-6">
-				<div className="flex items-center justify-between">
-					<Link href="/" className="flex min-w-0 items-center gap-2 font-medium">
-						<EssalMailLogo size={48} className="shrink-0" />
-						<span className="truncate text-3xl font-semibold tracking-tight">Essal Mail</span>
-					</Link>
-
-					<LanguageSwitcher />
-				</div>
-
-				<SignupForm
-					oidc={{
-						googleEnabled: !!googleEnabled,
-						genericEnabled: !!genericOidc,
-						genericName: genericOidc?.providerName,
-					}}
-					dict={dict}
-				/>
-			</div>
-		</div>
+		<AuthShell dict={dict} signup>
+			<SignupForm
+				oidc={{
+					googleEnabled: !!googleEnabled,
+					genericEnabled: !!genericOidc,
+					genericName: genericOidc?.providerName,
+				}}
+				dict={dict}
+			/>
+		</AuthShell>
 	);
 }

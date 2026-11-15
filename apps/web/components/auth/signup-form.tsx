@@ -1,207 +1,61 @@
 "use client";
-import { Button } from "@mantine/core";
+
 import type { FormState } from "@schema";
-import { IconBrandGoogle, IconLogin2 } from "@tabler/icons-react";
-import { Loader2Icon } from "lucide-react";
-import Form from "next/form";
+import { Loader2 } from "lucide-react";
 import Link from "next/link";
-import React, { useActionState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { useActionState, useRef, useState } from "react";
 import { signup } from "@/lib/actions/auth";
 import type { Dictionary } from "@/lib/dictionaries";
 import { resolveDictMessage } from "@/lib/resolve-dict-message";
-import { cn } from "@/lib/utils";
+import { AuthOAuthButtons, AuthPasswordField, type AuthProviders } from "./auth-controls";
+import styles from "./auth.module.css";
 
-export function SignupForm({
-	className,
-	oidc,
-	dict,
-	...props
-}: React.ComponentProps<"div"> & {
-	oidc?: {
-		googleEnabled?: boolean;
-		genericEnabled?: boolean;
-		genericName?: string;
-	};
-} & { dict: Dictionary }) {
-	const passwordRef = React.useRef<HTMLInputElement>(null);
-	const retypeRef = React.useRef<HTMLInputElement>(null);
-
-	const validatePasswords = React.useCallback(() => {
-		const pass = passwordRef.current?.value ?? "";
-		const re = retypeRef.current?.value ?? "";
-		if (!re) {
-			retypeRef.current?.setCustomValidity("");
-			return;
-		}
-		if (pass !== re) {
-			retypeRef.current?.setCustomValidity(dict.auth.passwordsDoNotMatch);
-		} else {
-			retypeRef.current?.setCustomValidity("");
-		}
-	}, [dict.auth.passwordsDoNotMatch]);
-
-	const [formState, formAction, isPending] = useActionState<
-		FormState,
-		FormData
-	>(signup, {});
-
+export function SignupForm({ oidc, dict }: { oidc?: AuthProviders; dict: Dictionary }) {
+	const passwordRef = useRef<HTMLInputElement>(null);
+	const retypeRef = useRef<HTMLInputElement>(null);
+	const [mismatch, setMismatch] = useState(false);
+	const [formState, formAction, isPending] = useActionState<FormState, FormData>(signup, {});
+	function validatePasswords() {
+		const invalid = Boolean(retypeRef.current?.value && passwordRef.current?.value !== retypeRef.current.value);
+		retypeRef.current?.setCustomValidity(invalid ? dict.auth.passwordsDoNotMatch : "");
+		setMismatch(invalid);
+		return !invalid;
+	}
+	function clearMismatch() {
+		retypeRef.current?.setCustomValidity("");
+		setMismatch(false);
+	}
 	return (
-		<div className={cn("flex flex-col gap-6", className)} {...props}>
-			<Card>
-				<CardHeader className="text-center">
-					<CardTitle className="text-xl">{dict.auth.welcome}</CardTitle>
-					{/*<CardDescription>Signup with your Google account</CardDescription>*/}
-				</CardHeader>
-				<CardContent>
-					{oidc?.googleEnabled && (
-						<Button
-							fullWidth
-							variant="default"
-							className="w-full"
-							href={"/api/auth/oidc/google"}
-							component="a"
-							leftSection={<IconBrandGoogle />}
-						>
-							{dict.auth.signupWithGoogle}
-						</Button>
-					)}
-					{oidc?.genericEnabled && (
-						<Button
-							fullWidth
-							variant="default"
-							className="w-full mt-2"
-							href={"/api/auth/oidc/generic"}
-							component="a"
-							leftSection={<IconLogin2 />}
-						>
-							{dict.auth.signupWithProviderPrefix}
-							{oidc?.genericName || "SSO"}
-						</Button>
-					)}
-					{!oidc?.googleEnabled && !oidc?.genericEnabled && (
-						<div className={"text-sm text-center"}>
-							{dict.auth.noOidcEnabled}
-						</div>
-					)}
-					<Form action={formAction}>
-						<input type="hidden" name="locale" value={dict.locale} />
-						<div className="grid gap-6">
-							<div className="flex flex-col gap-4">
-								{/*<Button variant="outline" className="w-full">*/}
-								{/*	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">*/}
-								{/*		<path*/}
-								{/*			d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"*/}
-								{/*			fill="currentColor"*/}
-								{/*		/>*/}
-								{/*	</svg>*/}
-								{/*	Login with Apple*/}
-								{/*</Button>*/}
-								{/*<Button variant="outline" className="w-full" href={"/api/auth/oidc/start/google"} component="a">*/}
-								{/*	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">*/}
-								{/*		<path*/}
-								{/*			d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"*/}
-								{/*			fill="currentColor"*/}
-								{/*		/>*/}
-								{/*	</svg>*/}
-								{/*	Signup with Google*/}
-								{/*</Button>*/}
-							</div>
-							<div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-								<span className="bg-card text-muted-foreground relative z-10 px-2">
-									{dict.auth.continueWith}
-								</span>
-							</div>
-							<div className="grid gap-6">
-								<div className="grid gap-3">
-									<Label htmlFor="email">{dict.auth.email}</Label>
-									<Input
-										id="email"
-										type="email"
-										name="email"
-										placeholder="m@example.com"
-										required
-										autoComplete="email"
-									/>
-								</div>
-								<div className="grid gap-3">
-									<div className="flex items-center">
-										<Label htmlFor="password">{dict.auth.password}</Label>
-									</div>
-									<Input
-										id="password"
-										name="password"
-										type="password"
-										required
-										minLength={8}
-										autoComplete="new-password"
-										ref={passwordRef}
-										onInput={validatePasswords}
-									/>
-								</div>
-								<div className="grid gap-3">
-									<div className="flex items-center">
-										<Label htmlFor="password">{dict.auth.retype}</Label>
-									</div>
-
-									<Input
-										id="retypePassword"
-										name="retypePassword"
-										type="password"
-										required
-										autoComplete="new-password"
-										ref={retypeRef}
-										onInput={validatePasswords}
-									/>
-									<p
-										className="text-xs text-muted-foreground"
-										aria-live="polite"
-									>
-										{dict.auth.matchExact}
-									</p>
-								</div>
-
-								<div className="grid gap-3">
-									<Label htmlFor="email">{dict.auth.workspaceName}</Label>
-									<Input
-										id="workspaceName"
-										name="workspaceName"
-										placeholder="Default Workspace"
-										required
-									/>
-								</div>
-
-								{formState.error && (
-									<div className={"text-center"}>
-										<span className="text-sm text-red-600">
-											{resolveDictMessage(dict.actions, formState.error)}
-										</span>
-									</div>
-								)}
-								<Button type="submit" className="w-full" disabled={isPending}>
-									{isPending && <Loader2Icon className="animate-spin" />}
-									{dict.auth.submit}
-								</Button>
-							</div>
-							<div className="text-center text-sm">
-								{dict.auth.accountPresent}{" "}
-								<Link
-									href={`/${dict.locale}/auth/login`}
-									className="underline underline-offset-4"
-								>
-									{dict.auth.signIn}
-								</Link>
-							</div>
-						</div>
-					</Form>
-				</CardContent>
-			</Card>
-			{/*<div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">*/}
-			{/*	By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}*/}
-			{/*	and <a href="#">Privacy Policy</a>.*/}
-			{/*</div>*/}
-		</div>
+		<>
+			<AuthOAuthButtons oidc={oidc} dict={dict} signup />
+			<form action={formAction} className={styles.form} aria-labelledby="auth-heading" aria-busy={isPending} onSubmitCapture={(event) => {
+				if (!validatePasswords()) { event.preventDefault(); retypeRef.current?.reportValidity(); retypeRef.current?.focus(); }
+			}}>
+				<input type="hidden" name="locale" value={dict.locale} />
+				<p className={styles.hint}>{dict.auth.allFieldsRequired}</p>
+				<div className={styles.field}>
+					<label htmlFor="email">{dict.auth.email} <span aria-hidden="true">*</span></label>
+					<input className={styles.input} id="email" name="email" type="email" placeholder="name@company.com" required autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
+				</div>
+				<div className={styles.field}>
+					<AuthPasswordField id="password" name="password" label={dict.auth.password} dict={dict} required minLength={8} autoComplete="new-password" inputRef={passwordRef} aria-describedby="password-hint" onBlur={validatePasswords} onInput={clearMismatch} />
+					<p id="password-hint" className={styles.hint}>{dict.auth.passwordHint}</p>
+				</div>
+				<div className={styles.field}>
+					<AuthPasswordField id="retypePassword" name="retypePassword" label={dict.auth.retype} dict={dict} required autoComplete="new-password" inputRef={retypeRef} aria-invalid={mismatch || undefined} aria-describedby={mismatch ? "password-mismatch" : undefined} onBlur={validatePasswords} onInput={clearMismatch} />
+					{mismatch && <p id="password-mismatch" className={styles.error} role="alert">{dict.auth.passwordsDoNotMatch}</p>}
+				</div>
+				<div className={styles.field}>
+					<label htmlFor="workspaceName">{dict.auth.workspaceName} <span aria-hidden="true">*</span></label>
+					<input className={styles.input} id="workspaceName" name="workspaceName" type="text" required autoComplete="organization" />
+				</div>
+				{formState.error && <p role="alert" className={styles.error}>{resolveDictMessage(dict.actions, formState.error)}</p>}
+				<button type="submit" className={styles.submit} disabled={isPending}>
+					{isPending && <Loader2 size={18} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />}
+					{dict.auth.signUp}
+				</button>
+			</form>
+			<p className={styles.switchLink}>{dict.auth.accountPresent}{" "}<Link href={`/${dict.locale}/auth/login`}>{dict.auth.signIn}</Link></p>
+		</>
 	);
 }

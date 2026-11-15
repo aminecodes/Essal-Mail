@@ -64,14 +64,15 @@ function useLocaleSwitch() {
  * Standalone trigger for contexts without an existing dropdown menu
  * (e.g. the login/signup pages).
  */
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ showLabel = false }: { showLabel?: boolean }) {
 	const { currentLocale, pending, onSelect } = useLocaleSwitch();
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="ghost" size="icon" disabled={pending}>
-					<Languages />
+				<Button variant="ghost" size={showLabel ? "default" : "icon"} disabled={pending} aria-label="Language">
+					<Languages aria-hidden="true" />
+					{showLabel && <span>{LOCALE_LABELS[currentLocale]}</span>}
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end">
