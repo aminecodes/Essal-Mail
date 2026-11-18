@@ -17,5 +17,9 @@ export async function AuthLayout({
 		redirect(withLocale(locale, await getDefaultWorkspacePath(user)));
 	}
 
-	return <>{children}</>;
+	return <div className="flex min-h-screen flex-col"><div className="flex-1">{children}</div><nav aria-label="Essal legal policies" className="flex flex-wrap justify-center gap-4 p-4 text-xs">
+              <a href="https://legal.essal.it.com/terms" target="_blank" rel="noopener noreferrer" className="hover:underline">Terms</a>
+              <a href="https://legal.essal.it.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:underline">Privacy</a>
+              <a href="https://legal.essal.it.com/refunds" target="_blank" rel="noopener noreferrer" className="hover:underline">Refunds</a>
+            </nav></div>;
 }
